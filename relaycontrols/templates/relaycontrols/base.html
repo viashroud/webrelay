@@ -3,24 +3,35 @@
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/relay_list.css' %}">
-        <script src="static/js/jquery-3.3.1.min.js"></script> 
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
         
+        <script src="../../static/js/jquery-3.3.1.min.js"></script> 
+
+        <script>
+            $(document).ready(function() {
+                $("btnAddProfile").prop('value', 'Save');
+            });
+        </script>
         <title>Relay Controls</title>
     </head>
     <body>
+        
         <div class="page-header">
-            <h1><a href="/">Relay Controls</a></h1>
+            <h1><a href="">Relay Controls</a></h1>
         </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
+        
+        <div>
+            {% for relay in relays %}
+                <div>
+                    <h1><a href="">{{ relay.name }}</a></h1>
+                    <p>{{ relay.pin_number }}</p>
+                    <button class="btn"><p>{{ relay.current_state }}</p></button>
+                    <input type='button' value='Add' id='btnAddProfile'>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </body>
 </html>
+
 
 

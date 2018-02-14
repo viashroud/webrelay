@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Relay
 
-def relay_list(request):
+def base(request):
     relays = Relay.objects.all()
-    return render(request, 'relaycontrols/relay_list.html', {'relays': relays})
+    return render(request, 'relaycontrols/base.html', {'relays': relays})
