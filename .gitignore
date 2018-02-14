@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pycache__
+webrelayvenv
+db.sqlite3
+/static
+.DS_Store
